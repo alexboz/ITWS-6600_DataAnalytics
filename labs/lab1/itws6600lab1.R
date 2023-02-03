@@ -85,6 +85,56 @@ x <- seq(30, 95, 1)
 qqplot(qt(ppoints(250), df=5), x, xlab="Q-Q plot for t dsn")
 qqline(x)
 
+# Exercise 1: Repeat for AGRICULTURE
+AGRICULTURE
+AGRICULTURE <- as.numeric(AGRICULTURE)
+AGRICULTURE
+AGRICULTURE <- AGRICULTURE[!is.na(AGRICULTURE)]
+AGRICULTURE
+
+summary(AGRICULTURE)
+fivenum(AGRICULTURE)
+stem(AGRICULTURE)
+hist(AGRICULTURE)
+lines(density(AGRICULTURE, bw=1.))
+lines(density(AGRICULTURE, bw="SJ"))
+rug(AGRICULTURE)
+
+plot(ecdf(AGRICULTURE), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(AGRICULTURE)
+qqline(AGRICULTURE)
+x <- seq(30, 95, 1)
+qqplot(qt(ppoints(250), df=5), x, xlab="Q-Q plot for t dsn")
+qqline(x)
+
+# Exercise 1: Repeat for CLIMATE
+CLIMATE
+CLIMATE <- as.numeric(CLIMATE)
+CLIMATE
+CLIMATE <- CLIMATE[!is.na(CLIMATE)]
+CLIMATE
+
+summary(CLIMATE)
+fivenum(CLIMATE)
+stem(CLIMATE)
+hist(CLIMATE)
+lines(density(CLIMATE, bw=1.))
+lines(density(CLIMATE, bw="SJ"))
+rug(CLIMATE)
+
+plot(ecdf(CLIMATE), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(CLIMATE)
+qqline(CLIMATE)
+x <- seq(30, 95, 1)
+qqplot(qt(ppoints(250), df=5), x, xlab="Q-Q plot for t dsn")
+qqline(x)
+
+# Comparing distributions
+boxplot(AGRICULTURE, CLIMATE)
+qqplot(AGRICULTURE, CLIMATE)
+
 # Comparing distributions
 DALY
 DALY <- as.numeric(DALY)
